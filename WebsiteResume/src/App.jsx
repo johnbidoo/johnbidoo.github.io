@@ -1,13 +1,12 @@
 import pcImg from "./assets/pc-background.png";
 import "./index.css";
+import FallingPC from "./FallingPc";
 
 function App() {
   return (
     <div className ="app">
       
-      <img src={pcImg} className="float f1" />
-      <img src={pcImg} className="float f2" />
-      <img src={pcImg} className="float f3" />
+      <FallingPC imageSrc={pcImg} spawnIntervalms={350} maxItems = {30} />
 
       {/*navbar*/}
       <div className="navbar">

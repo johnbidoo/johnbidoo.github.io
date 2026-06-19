@@ -1,6 +1,10 @@
 /* IMPORT ROBOTO FONT*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
+.app {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden; /* keeps falling images from creating scrollbars */
+}
 
 * {
   margin: 0;
@@ -59,3 +63,13 @@ Navigation bar, incldues the logo, nav links
 
 /* ANIMATION FOR BACKGROUND */
 
+@keyframes fallDown {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(var(--drift), 110vh) rotate(var(--rotate));
+    opacity: 0;
+  }
+}
