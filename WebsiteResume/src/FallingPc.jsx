@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
-function FallingImages({ imageSrc = pcImg, spawnIntervalMs = 400, maxItems = 40 }) {
+function FallingImages({ imageSrc = pcImg, spawnIntervalMs = 1500, maxItems = 2 }) {
   const [items, setItems] = useState([]);
   const idRef = useRef(0);
   const containerRef = useRef(null);
@@ -11,7 +11,7 @@ function FallingImages({ imageSrc = pcImg, spawnIntervalMs = 400, maxItems = 40 
       const id = idRef.current++;
       const size = Math.random() * 30 + 20;        // 20-50px
       const startX = Math.random() * 100;           // 0-100%
-      const duration = Math.random() * 5 + 4;       // 4-9s
+      const duration = Math.random() * 10 + 12;       // 4-9s
       const drift = (Math.random() * 120 - 60);     // -60 to 60px sideways
       const rotateAmount = (Math.random() * 540 + 180) * (Math.random() < 0.5 ? -1 : 1);
       const delay = Math.random() * 0.5;
@@ -47,7 +47,7 @@ function FallingImages({ imageSrc = pcImg, spawnIntervalMs = 400, maxItems = 40 
           onAnimationEnd={() => handleAnimationEnd(item.id)}
           style={{
             position: 'absolute',
-            top: '-60px',
+            top: '-30px',
             left: `${item.startX}%`,
             width: `${item.size}px`,
             height: 'auto',
