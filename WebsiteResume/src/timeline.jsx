@@ -24,7 +24,7 @@ function Timeline() {
     <div className="timeline">
       {timelineData.map((item, index) => (
         <div key={index} className="timeline-item">
-          <div className="timeline-content-box">
+          <div className="timeline-content">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </div>
