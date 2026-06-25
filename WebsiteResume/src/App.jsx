@@ -4,14 +4,14 @@ import "./index.css";
 import FallingPC from "./FallingPc";
 import Navbar from "./navbar";
 import Timeline from "./timeline";
+import About from './aboutme';
 
 function App() {
   return (
     <div className="app">
 
       <FallingPC imageSrc={pcImg} spawnIntervalMs={350} maxItems={30} />
-
-      {/* navbar */}
+      
       <Navbar />
 
       <div className="profile-wrapper">
@@ -19,10 +19,12 @@ function App() {
         <p className="profile-name">John Bernardo</p>
         <p className="profile-description">Student, Gamer & Racer</p>
       </div>
+      <About />
       <section className="timeline-section">
         <h2 className="timeline-title">Timeline </h2>
               <Timeline />
       </section>
+
     </div>
   );
 }
