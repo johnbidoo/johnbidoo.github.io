@@ -1,0 +1,66 @@
+/* =========================
+   GOAL TITLE
+========================= */
+.goals-hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.goals-title {
+  margin-top: 16px;
+  font-size: 72px;
+  font-weight: 300;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+.goals-subtitle
+{
+  margin-top: 16px;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+/* =========================
+   GOALS SECTION
+========================= */
+/* BASE SECTION STYLE */
+.goal-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* WHITE SECTION */
+.goal-section.white {
+  background: white;
+  color: black;
+}
+
+/* DARK SECTION */
+.goal-section.dark {
+  background: #111;
+  color: white;
+}
+
+/* LIST STYLE */
+.goal-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.goal-section li {
+  font-size: 18px;
+  margin: 10px 0;
+}

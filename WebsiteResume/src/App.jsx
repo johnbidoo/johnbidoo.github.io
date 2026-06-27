@@ -1,31 +1,25 @@
-import pcImg from "./assets/pc-background.png";
-import profilePic from "./assets/toadpfp.png";
-import "./index.css";
-import FallingPC from "./FallingPc";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./navbar";
-import Timeline from "./timeline";
-import About from './aboutme';
+
+import Home from "./pages/Home";
+import Goals from "./pages/Goals";
 
 function App() {
   return (
-    <div className="app">
+    <BrowserRouter>
+      <div className="app">
 
-      <FallingPC imageSrc={pcImg} spawnIntervalMs={350} maxItems={30} />
-      
-      <Navbar />
+        <Navbar />
 
-      <div className="profile-wrapper">
-        <img src={profilePic} alt="John Bernardo" className="profile-pic" />
-        <p className="profile-name">John Bernardo</p>
-        <p className="profile-description">Student, Gamer & Racer</p>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          {/* Goals page */}
+          <Route path="/goals" element={<Goals />} />
+        </Routes>
+
       </div>
-      <About />
-      <section className="timeline-section">
-        <h2 className="timeline-title">Timeline </h2>
-              <Timeline />
-      </section>
-
-    </div>
+    </BrowserRouter>
   );
 }
 

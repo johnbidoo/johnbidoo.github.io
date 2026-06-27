@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,9 +18,8 @@ function Navbar() {
       <div className="logo">John Bernardo</div>
 
       <div className="nav-links">
-        <a href="#">HOME</a>
-        <a href="#">GOALS</a>
-        <a href="#">CV</a>
+        <Link to="/">HOME</Link>
+        <Link to="/goals">GOALS</Link>
       </div>
     </div>
   );

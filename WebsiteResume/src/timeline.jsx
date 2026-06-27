@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { FaCode, FaUniversity, FaBriefcase, FaShieldAlt, FaHtml5 } from "react-icons/fa";
+import { FaCode, FaUniversity, FaBriefcase, FaShieldAlt, FaHtml5, FaBullseye} from "react-icons/fa";
 
 const timelineData = [
+    {
+    year: "2026",
+    title: "Developing Tech Sales skills",
+    description: `As my aspirations are onto the business side of IT, I've started to develop myself within sales, specifically reading and practicing.
+    Currently looking for any opportunity to be a Business Development Representative or Sales Development Representative within an IT environment.`,
+    icon: FaBullseye,
+    color: "#3B82F6"
+  },
   {
     year: "2026",
     title: "Creating projects",

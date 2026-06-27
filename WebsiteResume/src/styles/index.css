@@ -40,9 +40,9 @@ body {
    2. LAYOUT
    ========================================================================== */
 .app {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  overflow: hidden; /* keeps falling images from creating scrollbars */
 }
 /* =========================
    NAVBAR
@@ -309,4 +309,34 @@ body {
   line-height: 1.8;
   font-family: 'Nunito', sans-serif;
   color: #444;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  margin-top: auto;
+  padding: 30px 20px;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-text {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #aaa;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: white;
 }
