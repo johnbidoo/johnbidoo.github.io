@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./navbar";
 
+import Navbar from "./navbar";
 import Home from "./pages/Home";
 import Goals from "./pages/Goals";
+import ScrollToTop from "./scroll";
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <div className="app">
 
         <Navbar />
@@ -14,8 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          {/* Goals page */}
-          <Route path="/goals" element={<Goals />} />
+          <Route path="/Goals" element={<Goals />} />
         </Routes>
 
       </div>
