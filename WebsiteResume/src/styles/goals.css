@@ -1,66 +1,131 @@
 /* =========================
-   GOAL TITLE
+   GOALS HERO
+   (typography matches .profile-name / .profile-description in index.css)
 ========================= */
 .goals-hero {
+  position: relative;
+  z-index: 5;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-direction: column;
+  padding: var(--space-9) var(--page-padding-x) var(--space-8);
+  animation: fadeUp 0.8s ease both;
 }
 
 .goals-title {
-  margin-top: 16px;
-  font-size: 72px;
+  font-size: var(--fs-display);
   font-weight: 300;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
 }
 
-.goals-subtitle
-{
-  margin-top: 16px;
-  font-size: 30px;
+.goals-subtitle {
+  margin-top: var(--space-4);
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
   font-weight: 300;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
+  color: var(--color-text-muted);
 }
+
 /* =========================
-   GOALS SECTION
+   GOALS SECTIONS
 ========================= */
-/* BASE SECTION STYLE */
 .goal-section {
-  min-height: 100vh;
-  padding: 80px 20px;
-
+  padding: var(--section-padding-y) var(--page-padding-x);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-
   text-align: center;
 }
 
-/* WHITE SECTION */
+.goal-section h2 {
+  font-size: var(--fs-section);
+  font-weight: 300;
+  margin-bottom: var(--space-7);
+}
+
+.goal-section h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: var(--space-4) auto 0;
+  border-radius: 3px;
+  background: var(--color-accent);
+}
+
+/* LIGHT SECTION */
 .goal-section.white {
-  background: white;
-  color: black;
+  background: var(--color-surface);
+  color: var(--color-text);
 }
 
 /* DARK SECTION */
 .goal-section.dark {
-  background: #111;
-  color: white;
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
 }
 
-/* LIST STYLE */
+/* LIST — each goal is a card */
 .goal-section ul {
   list-style: none;
-  padding: 0;
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .goal-section li {
-  font-size: 18px;
-  margin: 10px 0;
+  position: relative;
+  padding: var(--space-4) var(--space-5) var(--space-4) var(--space-7);
+  font-size: var(--fs-md);
+  text-align: left;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+/* Accent dot */
+.goal-section li::before {
+  content: "";
+  position: absolute;
+  left: var(--space-5);
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  transform: translateY(-50%);
+}
+
+.goal-section.white li {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.goal-section.dark li {
+  background: var(--color-hover-tint);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.goal-section li:hover {
+  transform: translateX(4px);
+  border-color: var(--color-accent);
+}
+
+.goal-section.white li:hover {
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 600px) {
+  .goal-section li {
+    font-size: var(--fs-base);
+  }
 }

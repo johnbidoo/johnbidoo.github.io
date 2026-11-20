@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import ThemeToggle from "./themeToggle";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,8 +19,9 @@ function Navbar() {
       <div className="logo">John Bernardo</div>
 
       <div className="nav-links">
-        <Link to="/">HOME</Link>
-        <Link to="/goals">GOALS</Link>
+        <NavLink to="/" end>HOME</NavLink>
+        <NavLink to="/goals">GOALS</NavLink>
+        <ThemeToggle />
       </div>
     </div>
   );
