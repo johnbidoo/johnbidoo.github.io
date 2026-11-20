@@ -21,6 +21,7 @@ function Navbar() {
       <div className="nav-links">
         <NavLink to="/" end>HOME</NavLink>
         <NavLink to="/goals">GOALS</NavLink>
+        <NavLink to="/skills">SKILLS</NavLink>
         <ThemeToggle />
       </div>
     </div>
