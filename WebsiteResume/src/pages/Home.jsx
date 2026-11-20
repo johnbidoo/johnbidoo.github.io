@@ -4,6 +4,7 @@ import FallingPC from "../FallingPc";
 import About from "../aboutme";
 import Timeline from "../timeline";
 import Footer from "../footer";
+import GithubActivity from "../githubActivity";
 
 import pcImg from "../assets/pc-background.png";
 import profilePic from "../assets/toadpfp.png";
@@ -46,6 +47,8 @@ function Home() {
         <h2 className="timeline-title">Timeline</h2>
         <Timeline />
       </section>
+
+      <GithubActivity />
 
       <Footer />
     </>

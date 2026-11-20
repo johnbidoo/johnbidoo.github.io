@@ -1,0 +1,387 @@
+/* =========================
+   GITHUB ACTIVITY SECTION (homepage)
+========================= */
+.github-section {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding: var(--section-padding-y) var(--page-padding-x);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Heading matches .about-title / .timeline-title */
+.github-title {
+  font-size: var(--fs-section);
+  font-weight: 300;
+  text-align: center;
+}
+
+.github-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: var(--space-4) auto 0;
+  border-radius: 3px;
+  background: var(--color-accent);
+}
+
+.github-subtitle {
+  margin: var(--space-4) 0 var(--space-7);
+  text-align: center;
+  font-size: var(--fs-md);
+  color: var(--color-text-muted);
+}
+
+.github-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.github-card-title {
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+/* Shared card look */
+.github-stat,
+.github-card,
+.repo-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Stats ---------- */
+.github-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+}
+
+.github-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  transition: transform var(--transition), border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.github-stat:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.github-stat-icon {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+.github-stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-section);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.github-stat-label {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Contribution calendar ---------- */
+.github-card {
+  padding: var(--space-5);
+}
+
+.calendar {
+  --cell: 11px;
+  --cell-gap: 3px;
+}
+
+.calendar-scroll {
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+}
+
+.calendar-scroll:focus-visible {
+  outline-offset: 4px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: var(--space-2);
+  row-gap: var(--space-1);
+  width: max-content;
+  margin: 0 auto;
+}
+
+.calendar-months {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--weeks), var(--cell));
+  column-gap: var(--cell-gap);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.calendar-months span {
+  white-space: nowrap;
+}
+
+.calendar-days {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: repeat(7, var(--cell));
+  row-gap: var(--cell-gap);
+  font-size: 0.65rem;
+  line-height: var(--cell);
+  color: var(--color-text-muted);
+}
+
+.calendar-weeks {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  gap: var(--cell-gap);
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-rows: repeat(7, var(--cell));
+  row-gap: var(--cell-gap);
+}
+
+.calendar-cell {
+  display: inline-block;
+  width: var(--cell);
+  height: var(--cell);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.calendar-cell.empty {
+  background: transparent;
+}
+
+.calendar-cell[data-level="1"] { background: color-mix(in srgb, var(--color-accent) 35%, transparent); }
+.calendar-cell[data-level="2"] { background: color-mix(in srgb, var(--color-accent) 55%, transparent); }
+.calendar-cell[data-level="3"] { background: color-mix(in srgb, var(--color-accent) 80%, transparent); }
+.calendar-cell[data-level="4"] { background: var(--color-accent); }
+
+.calendar-weeks .calendar-cell:not(.empty):hover {
+  outline: 1px solid var(--color-text-muted);
+  outline-offset: 1px;
+}
+
+.calendar-legend {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--cell-gap);
+  margin-top: var(--space-3);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.calendar-legend span:first-child { margin-right: var(--space-1); }
+.calendar-legend span:last-child { margin-left: var(--space-1); }
+
+/* ---------- Repositories ---------- */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: transform var(--transition), border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.repo-card:hover,
+.repo-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.repo-icon {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.repo-name {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--color-accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-description {
+  flex: 1;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.repo-description.empty {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.repo-language {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.repo-language-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* ---------- Button ---------- */
+.github-button {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-weight: 500;
+  color: var(--color-white);
+  background: var(--color-accent);
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition), transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.github-button svg {
+  font-size: 1.2rem;
+}
+
+.github-button:hover,
+.github-button:focus-visible {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- States ---------- */
+.github-error,
+.github-empty {
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--color-text-muted);
+  background: var(--color-card);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.skeleton {
+  display: block;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-text) 6%, transparent) 25%,
+    color-mix(in srgb, var(--color-text) 12%, transparent) 50%,
+    color-mix(in srgb, var(--color-text) 6%, transparent) 75%
+  );
+  background-size: 200% 100%;
+  animation: githubShimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-value {
+  width: 3rem;
+  height: 2.2rem;
+}
+
+.skeleton-calendar {
+  height: 120px;
+}
+
+.skeleton-repo {
+  height: 150px;
+  border-radius: var(--radius-md);
+}
+
+@keyframes githubShimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .github-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  /* Contributions stat spans the full row under the other two */
+  .github-stat:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .github-card {
+    padding: var(--space-4);
+  }
+
+  .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .github-button {
+    align-self: stretch;
+    justify-content: center;
+  }
+}
