@@ -5,8 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/toadpfp.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>websiteresume</title>
-    <script type="module" crossorigin src="/assets/index-Bhb6uoyu.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DT8NWayv.css">
+    <script>
+      // Apply saved theme (or system preference) before first paint
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DCesITAN.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DdInDfu6.css">
   </head>
   <body>
     <div id="root"></div>
